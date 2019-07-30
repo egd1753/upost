@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is my capstone project for Bloc's Web Development course. This is an app called uPost, and it allows organizations to create a virtual bulletin board which may or may not mirror their physical bulletin board. This can help to increase an organization's digital presence.
 
-Things you may want to cover:
+* Ruby version: 2.6.3
 
-* Ruby version
+* Rails version: 5.2.3
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Test suite: Rspec
