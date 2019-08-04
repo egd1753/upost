@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-
-
+  root 'boards#show'
 
   get 'about' => 'welcome#about'
 
-  root 'boards#show'
+  resources :bulletins
 
 end
