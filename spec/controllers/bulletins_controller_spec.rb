@@ -3,12 +3,17 @@ require 'rails_helper'
 RSpec.describe BulletinsController, type: :controller do
   let(:my_bulletin) { Bulletin.create!(title: "My Bulletin Title", body: "My Bulletin Body") }
 
-#  describe "GET #index" do
-#    it "returns http success" do
-#      get :index
-#      expect(response).to have_http_status(:success)
-#    end
-#  end
+  describe "GET #index" do
+    it "returns http success" do
+      get :index
+      expect(response).to have_http_status(:success)
+    end
+
+    it "assigns [my_bulletin] to @bulletins" do
+      get :index
+      expect(assigns(:bulletins)).to eq([my_bulletin])
+    end
+  end
 
 
 #  describe "GET #show" do
