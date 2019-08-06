@@ -49,7 +49,7 @@ RSpec.describe BulletinsController, type: :controller do
 
     it "redirects to the bulletin board" do
       post :create, params: { bulletin: { title: "My Bulletin Title", body: "My Bulletin Body"} }
-      expect(response).to redirect_to "boards#show"
+      expect(response).to redirect_to :root
     end
   end
 
