@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  root 'boards#show'
+  root 'welcome#index'
 
   get 'about' => 'welcome#about'
 
-  resources :bulletins
+  resources :boards do
+    resources :bulletins, except: [:index]
+  end
 
 end

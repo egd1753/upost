@@ -1,14 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe BulletinsController, type: :controller do
-  let(:my_bulletin) { Bulletin.create!(title: "My Bulletin Title", body: "My Bulletin Body") }
-
-#  describe "GET #index" do
-#    it "returns http success" do
-#      get :index
-#      expect(response).to have_http_status(:success)
-#    end
-#  end
+  let(:my_board) { Board.create!(title: "My Board Title") }
+  let(:my_bulletin) { my_board.bulletins.create!(title: "My Bulletin Title", body: "My Bulletin Body") }
 
 
 #  describe "GET #show" do
@@ -19,37 +13,39 @@ RSpec.describe BulletinsController, type: :controller do
 #  end
 
 
+
+
   describe "GET #new" do
     it "returns http success" do
-      get :new
+      get :new, params: { board_id: my_board.id }
       expect(response).to have_http_status(:success)
     end
 
     it "renders the #new view" do
-      get :new
+      get :new, params: { board_id: my_board.id }
       expect(response).to render_template :new
     end
 
     it "instantiates @bulletin" do
-      get :new
+      get :new, params: { board_id: my_board.id }
       expect(assigns(:bulletin)).not_to be_nil
     end
   end
 
 
-  describe "BULLETIN create" do
+  describe "POST #create" do
     it "increases the number of Bulletin by 1" do
-      expect{ post :create, params: { bulletin: { title: "My Bulletin Title", body: "My Bulletin Body" } } }.to change(Bulletin,:count).by(1)
+      expect{ post :create, params: { board_id: my_board.id, bulletin: { title: "My Bulletin Title", body: "My Bulletin Body" } } }.to change(Bulletin, :count).by(1)
     end
 
     it "assigns the new bulletin to @bulletin" do
-      post :create, params: { bulletin: { title: "My Bulletin Title", body: "My Bulletin Body"} }
+      post :create, params: { board_id: my_board.id, bulletin: { title: "My Bulletin Title", body: "My Bulletin Body"} }
       expect(assigns(:bulletin)).to eq Bulletin.last
     end
 
-    it "redirects to the bulletin board" do
-      post :create, params: { bulletin: { title: "My Bulletin Title", body: "My Bulletin Body"} }
-      expect(response).to redirect_to "boards#show"
+    it "redirects to board #show" do
+      post :create, params: { board_id: my_board.id, bulletin: { title: "My Bulletin Title", body: "My Bulletin Body"} }
+      expect(response).to redirect_to [my_board]
     end
   end
 
