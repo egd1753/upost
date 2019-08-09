@@ -2,13 +2,13 @@
 <h4>Share your bulletins here</h4>
 
 <div class="row">
-  <div class="col">
+  <div class="col" style="z-index: 1">
     <%= image_tag('cork_board.jpg', :style => "max-width: 100%") %>
   </div>
 
-  <div class="text-center text-lg-left">
+  <div class="text-center text-lg-left" style="z-index: 200">
     <%= render 'bulletins/bulletins_on_board', board: @board %>
-  </div>  
+  </div>
 </div>
 
 
