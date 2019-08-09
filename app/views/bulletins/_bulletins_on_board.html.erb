@@ -1,0 +1,6 @@
+  <% @board.bulletins.each do |bulletin| %>
+    <div class="col-lg-3 col-md-4 col-6">
+      <h4><%= bulletin.title %></h4>
+      <p><%= bulletin.body %></p>
+    </div>
+  <% end %>
