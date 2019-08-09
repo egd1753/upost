@@ -7,8 +7,17 @@
   </div>
 </div>
 
+<div class="row text-center text-md-left">
+  <% @board.bulletins.each do |bulletin| %>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+        <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/pWkk7iiCoDM/400x300" alt="">
+      </a>
+    </div>
+  <% end %>
+</div>
 
 
-<div>
+<div class="row">
   <%= link_to "Add Bulletin", new_board_bulletin_path(@board), class: "btn btn-primary" %>
 </div>
