@@ -1,19 +1,13 @@
 <h1 ><%= @board.title %></h1>
 <h4>Share your bulletins here</h4>
 
-
-<div class="bulletin-board">
+<div class="row">
+  <div class="col">
+    <%= image_tag('cork_board.jpg', :style => "max-width: 100%") %>
+  </div>
 </div>
 
-<div class="row text-center text-lg-left">
-  <% @board.bulletins.each do |bulletin| %>
-    <div class="col-lg-3 col-md-4 col-6">
-      <a href="#" class="d-block mb-4 h-100">
-        <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/pWkk7iiCoDM/400x300" alt="">
-      </a>
-    </div>
-  <% end %>
-</div>
+
 
 <div>
   <%= link_to "Add Bulletin", new_board_bulletin_path(@board), class: "btn btn-primary" %>
