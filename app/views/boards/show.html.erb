@@ -1,17 +1,12 @@
 <h1 ><%= @board.title %></h1>
 <h4>Share your bulletins here</h4>
 
-<div class="row">
-  <div class="col" style="z-index: 1">
-    <%= image_tag('cork_board.jpg', :style => "max-width: 100%") %>
-  </div>
-
-  <div class="text-center text-lg-left" style="z-index: 200">
+<div class="row" style="background-image: url(<%= asset_path 'cork_board.jpg' %>); max-width: 100%; min-height: 600px; margin-left:0; margin-right:0;">
+  <div class="row text-center text-lg-left top-buffer">
     <%= render 'bulletins/bulletins_on_board', board: @board %>
   </div>
 </div>
 
-
-<div class="row">
+<div class="row top-buffer" style="margin-left:0; margin-right:0;">
   <%= link_to "Add Bulletin", new_board_bulletin_path(@board), class: "btn btn-primary" %>
 </div>
