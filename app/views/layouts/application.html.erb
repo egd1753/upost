@@ -14,7 +14,7 @@
     <div class="container">
       <ul class="nav nav-tabs">
         <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Board", board_path(Board.first) %></li>
+        <li><%= link_to "Board", board_path(Board.first_or_create(title: 'uPost') ) %></li>
         <li><%= link_to "About", about_path %></li>
       </ul>
 
@@ -30,7 +30,7 @@
         </div>
       <% end %>
 
-      
+
       <%= yield %>
 
 
