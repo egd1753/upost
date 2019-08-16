@@ -1,0 +1,20 @@
+<% counter = 0 %>
+<div class="row text-center text-lg-left row-eq-height">
+
+  <% @board.bulletins.each do |bulletin| %>
+    <% if (counter != 0 && counter % 4 == 0) %>
+      </div>
+      <div class="row text-center text-lg-left row-eq-height">
+    <% end %>
+
+    <div class="col-lg-3">
+      <div class="thumbnail" style="height:180px;">
+        <h3><%= bulletin.title %></h3>
+        <div class="caption">
+          <p><%= bulletin.body %></p>
+        </div>
+      </div>
+    </div>
+
+    <% counter = counter + 1 %>
+  <% end %>
