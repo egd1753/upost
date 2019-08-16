@@ -5,7 +5,9 @@
   <div class="col" style="background-image: url(<%= asset_path 'cork_board.jpg' %>); max-width: 100%; min-height: 600px; margin-left:0; margin-right:0;">
     <div class="row" style="margin-right:25px; margin-left:25px;">
       <div class="col" style="margin-top: 25px; margin-bottom:25px;">
-        <%= render 'bulletins/bulletins_on_board', board: @board %>
+        <% if @board.bulletins %>
+          <%= render 'bulletins/bulletins_on_board', board: @board %>
+        <% end %>
       </div>
     </div>
   </div>
