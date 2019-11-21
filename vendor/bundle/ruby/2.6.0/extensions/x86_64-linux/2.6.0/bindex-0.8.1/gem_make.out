@@ -1,0 +1,15 @@
+current directory: /home/bennyliquid/development/upost/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+/usr/share/rvm/rubies/ruby-2.6.3/bin/ruby -I /usr/share/rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20191120-7459-q7l3t2.rb extconf.rb
+creating Makefile
+
+current directory: /home/bennyliquid/development/upost/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /home/bennyliquid/development/upost/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/bennyliquid/development/upost/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20191120-7459-zevwqa/skiptrace/internal

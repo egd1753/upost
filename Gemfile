@@ -62,11 +62,12 @@ group :development, :test do
   gem 'shoulda'
 end
 
- group :production do
-   # Use pg as the production database for Active Record
-   gem 'pg'
- end
+group :production do
+  # Use pg as the production database for Active Record
+  gem 'pg'
+end
 
+gem 'react-rails'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
